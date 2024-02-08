@@ -1,15 +1,25 @@
 @if (shouldRun) {
+
 <mat-sidenav-container class="example-container">
   <mat-sidenav opened mode="side">
-    Start content
+
+    <mat-list>
+      @for (link of pageLinks; track link) {
+
+      <mat-list-item routerLink="{{link.link}}">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="{{link.icon}}"></mat-icon>
+        {{link.pageName}}
+      </mat-list-item>
+      }
+    </mat-list>
   </mat-sidenav>
-  <!-- <mat-sidenav opened mode="side" position="end">End content</mat-sidenav> -->
-  Testing out the new syntax
+  <article>
+    <router-outlet></router-outlet>
+  </article>
 </mat-sidenav-container>
+
 } @else {
 <p>
   Testing out the new syntax
 </p>
 }
-
-

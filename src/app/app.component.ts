@@ -8,4 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'tradeCraft';
   shouldRun = true;
+
+  pageLinks = [
+    {
+      pageName: 'Dashboard',
+      icon: 'home',
+      link: '/dashboard'
+    },
+    {
+      pageName: 'Spot',
+      icon: 'account_balance',
+      link: '/spot'
+    }
+  ]
 }
