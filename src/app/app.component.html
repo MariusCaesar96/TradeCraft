@@ -7,20 +7,37 @@
       <h1>TradeCraft</h1>
     </div>
 
-    <mat-nav-list>
-      <div  mat-subheader>Navigation</div>
-
-      <mat-divider></mat-divider>
-
-      @for (link of pageLinks; track link.pageName) {
-          <mat-list-item [routerLink]="link.link">
-           <mat-icon matListItemIcon>{{link.icon}}</mat-icon>
-           <div class="" matListItemTitle>{{ link.pageName}}</div>
-           <div class="" matListItemLine>Testing to see what this is</div>
-          </mat-list-item>
-      }
     
-    </mat-nav-list>
+      <mat-card>
+        <mat-card-content>
+          <mat-nav-list>
+            <div mat-subheader>Navigation</div>
+
+            <mat-divider></mat-divider>
+
+            @for (link of pageLinks; track link.pageName) {
+            <mat-list-item [routerLink]="link.link">
+              <mat-icon matListItemIcon>{{link.icon}}</mat-icon>
+              <div class="" matListItemTitle>{{ link.pageName}}</div>
+              <div class="" matListItemLine>See all cryto in one place</div>
+            </mat-list-item>
+            }
+
+          </mat-nav-list>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content>
+          <div class="company-title">
+            <mat-icon class="profile-icon">account_circle</mat-icon>
+            <h1>TradeCraft</h1>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    
+
+
 
   </mat-sidenav>
   <article>
@@ -33,4 +50,3 @@
   Testing out the new syntax
 </p>
 }
-

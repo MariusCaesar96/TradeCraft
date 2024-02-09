@@ -1,8 +1,18 @@
 mat-sidenav-container {
-    background: white;
+    background: #f8f9f7;
     height: 100%;
+
+
     mat-sidenav {
-        background-color: #f8f9f7;
+        background: #f8f9f7;
+        padding: 1em;
+        
+
+        ::ng-deep .mat-drawer-inner-container {
+            display: flex;
+            flex-direction: column;
+        }
+
 
         .company-title {
             display: flex;
@@ -14,6 +24,11 @@ mat-sidenav-container {
                 margin: 0;
             }
         }
+
+        mat-card:nth-child(3) {
+            margin-top: auto;
+        }
+        
 
 
     }
