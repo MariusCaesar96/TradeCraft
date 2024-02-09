@@ -2,6 +2,19 @@ mat-sidenav-container {
     background: white;
     height: 100%;
     mat-sidenav {
-        background-color: #f8f9f7 ;
+        background-color: #f8f9f7;
+
+        .company-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1em;
+
+            h1 {
+                margin: 0;
+            }
+        }
+
+
     }
 }

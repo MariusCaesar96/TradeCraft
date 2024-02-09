@@ -2,16 +2,26 @@
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav opened mode="side">
+    <div class="company-title">
+      <mat-icon class="profile-icon">account_circle</mat-icon>
+      <h1>TradeCraft</h1>
+    </div>
 
-    <mat-list>
-      @for (link of pageLinks; track link) {
+    <mat-nav-list>
+      <div  mat-subheader>Navigation</div>
 
-      <mat-list-item routerLink="{{link.link}}">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="{{link.icon}}"></mat-icon>
-        {{link.pageName}}
-      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      @for (link of pageLinks; track link.pageName) {
+          <mat-list-item [routerLink]="link.link">
+           <mat-icon matListItemIcon>{{link.icon}}</mat-icon>
+           <div class="" matListItemTitle>{{ link.pageName}}</div>
+           <div class="" matListItemLine>Testing to see what this is</div>
+          </mat-list-item>
       }
-    </mat-list>
+    
+    </mat-nav-list>
+
   </mat-sidenav>
   <article>
     <router-outlet></router-outlet>
@@ -23,3 +33,4 @@
   Testing out the new syntax
 </p>
 }
+
