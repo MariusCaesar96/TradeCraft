@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  chips = [
+    {
+      name: 'Investments',
+      link: '/investments'
+    },
+    {
+      name: 'Markets',
+      link: '/markets'
+    },
+    {
+      name: 'Option Analytics',
+      link: '/option-analytics'
+    },
+  ]
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
