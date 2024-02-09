@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,9 +23,15 @@ export class DashboardComponent {
     },
   ]
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  toPage(link: string) {
+    console.log({ link })
+    console.log({ route: this.route})
+    this.router.navigate([link], { relativeTo: this.route});
   }
 
 }

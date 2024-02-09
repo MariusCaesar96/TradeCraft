@@ -3,17 +3,24 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatChipsModule } from '@angular/material/chips';
+import { InvestmentsComponent } from './investments/investments.component';
 
 
 const routes: Routes = [
   {
     path: '',
-   component: DashboardComponent
+   component: DashboardComponent,
+   children: [ 
+    {
+      path: 'investments',
+      component: InvestmentsComponent
+    }
+   ]
   }
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, InvestmentsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
