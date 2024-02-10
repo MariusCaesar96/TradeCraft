@@ -1,1 +1,27 @@
-<p>investments works!</p>
+
+<div class="row">
+    @for (chip of cryptos; track chip.value) {
+        <div class="col-xl-3 mb-2">
+            <mat-chip-option color="accent">{{ chip.name }} - ${{ chip.value }} </mat-chip-option>
+        </div>
+    }
+
+    
+    @for (investment of investments ; track investment.name) {
+        <mat-card class="col-xl-3">
+            <mat-card-header>
+                <mat-card-title>{{ investment.name }}</mat-card-title>
+                <mat-card-subtitle>description...</mat-card-subtitle>
+            </mat-card-header>
+            <!-- <img mat-card-image src="your-image-source" alt="Image description"> -->
+            <mat-card-content>
+                <p>
+                    This is where the graphs gonna go
+                </p>
+            </mat-card-content>
+            <mat-card-footer>
+                {{ investment.value }}
+            </mat-card-footer>
+        </mat-card>
+    }
+</div>

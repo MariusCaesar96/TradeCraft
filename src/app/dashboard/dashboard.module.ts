@@ -6,6 +6,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { InvestmentsComponent } from './investments/investments.component';
 import { MarketsComponent } from './markets/markets.component';
 import { OptionAnalyticsComponent } from './option-analytics/option-analytics.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 const routes: Routes = [
@@ -30,11 +31,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, MarketsComponent, OptionAnalyticsComponent, InvestmentsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ]
 })
 export class DashboardModule { }
