@@ -1,7 +1,7 @@
 @if (shouldRun) {
 
 <mat-sidenav-container class="example-container">
-  <mat-sidenav opened mode="side">
+  <mat-sidenav opened mode="side" #sidenav>
     <div class="company-title">
       <mat-icon class="profile-icon">account_circle</mat-icon>
       <h1>TradeCraft</h1>
@@ -43,6 +43,7 @@
 
 
   <mat-toolbar color="primary">
+    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     <span>Welcome, Caesar</span>
   </mat-toolbar>
 
