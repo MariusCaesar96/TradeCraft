@@ -11,15 +11,15 @@ export class DashboardComponent {
   chips = [
     {
       name: 'Investments',
-      link: '/investments'
+      link: 'investments'
     },
     {
       name: 'Markets',
-      link: '/markets'
+      link: 'markets'
     },
     {
       name: 'Option Analytics',
-      link: '/option-analytics'
+      link: 'option-analytics'
     },
   ]
 
@@ -30,7 +30,6 @@ export class DashboardComponent {
 
   toPage(link: string) {
     console.log({ link })
-    console.log({ route: this.route})
     this.router.navigate([link], { relativeTo: this.route});
   }
 

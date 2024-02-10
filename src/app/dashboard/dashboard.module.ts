@@ -9,13 +9,13 @@ import { InvestmentsComponent } from './investments/investments.component';
 const routes: Routes = [
   {
     path: '',
-   component: DashboardComponent,
-   children: [ 
-    {
-      path: 'investments',
-      component: InvestmentsComponent
-    }
-   ]
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'investments',
+        component: InvestmentsComponent
+      }
+    ]
   }
 ];
 
