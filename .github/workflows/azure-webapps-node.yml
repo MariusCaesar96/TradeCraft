@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: 'v18.13.0'
-      - name: Install NPM
+      - name: Install dependencies 
         run: |
           npm install --legacy-peer-deps
           npm run build --if-present
@@ -37,7 +37,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "../dist/trade-craft" # App source code path
+          app_location: "dist/trade-craft" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
