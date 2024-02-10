@@ -22,7 +22,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@master
         with:
-          node-version: 'v16.14.0'
+          node-version: 'v18.13.0'
       - name: Install NPM
         run: |
           npm install --legacy-peer-deps
