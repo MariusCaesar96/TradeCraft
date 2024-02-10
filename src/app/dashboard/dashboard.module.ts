@@ -7,6 +7,9 @@ import { InvestmentsComponent } from './investments/investments.component';
 import { MarketsComponent } from './markets/markets.component';
 import { OptionAnalyticsComponent } from './option-analytics/option-analytics.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 
 const routes: Routes = [
@@ -36,7 +39,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    HighchartsChartModule,
   ]
 })
 export class DashboardModule { }
