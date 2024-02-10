@@ -19,7 +19,7 @@ export class DashboardComponent {
     },
     {
       name: 'Option Analytics',
-      link: 'option-analytics'
+      link: 'options-analytics'
     },
   ]
 
