@@ -8,18 +8,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  chips = [
+  options = [
     {
       name: 'Investments',
-      link: 'investments'
+      link: 'investments',
+      selected: true
     },
     {
       name: 'Markets',
-      link: 'markets'
+      link: 'markets',
+      selected: false
     },
     {
       name: 'Option Analytics',
-      link: 'options-analytics'
+      link: 'options-analytics',
+      selected: false
     },
   ]
 

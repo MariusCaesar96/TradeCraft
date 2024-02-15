@@ -1,0 +1,16 @@
+::ng-deep .custom-chip-list mat-chip-option {
+  border: none;
+  border-radius: 9px; /* Adjust for desired curvature */
+  background-color: transparent; /* Unselected background */
+  color: #000; /* Unselected text color */
+  margin-right: 18px; /* Space between chips */
+  font-size: 14px; /* Adjust as needed */
+  padding: 8px 16px; /* Vertical and horizontal padding */
+}
+
+
+
+::ng-deep .custom-chip-list .mat-chip.mat-chip-selected {
+  background-color: #000; /* Selected background */
+  color: #fff; /* Selected text color */
+}
