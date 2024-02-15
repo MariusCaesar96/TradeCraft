@@ -1,0 +1,25 @@
+.crypto-ticker {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px; /* Adjust the margin as necessary */
+}
+
+.crypto-ticker .icon {
+    width: 20px; /* Adjust size as necessary */
+    height: 20px; /* Adjust size as necessary */
+    border-radius: 50%;
+    margin-right: 5px; /* Adjust the margin as necessary */
+}
+
+.crypto-ticker .positive {
+    color: green; /* Adjust color as necessary */
+}
+
+.crypto-ticker .negative {
+    color: red; /* Adjust color as necessary */
+}
+
+.crypto-ticker span {
+    margin-right: 5px; /* Adjust the margin as necessary */
+}

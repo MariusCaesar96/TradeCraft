@@ -31,22 +31,31 @@ export class InvestmentsComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 
-  cryptos = [
+  // Move into its own service
+  cryptos_data = [
     {
-      name: 'Bitcoin',
-      value: 40000
+      coin: 'Bitcoin',
+      value: 40000,
+      percetage: '+20.12',
+      backgroundColor: 'orange'
     },
-    {
-      name: 'Ethereum',
-      value: 3000
+    { 
+      coin: 'Ethereum', 
+      value: 3000, 
+      percetage: '+10.12', 
+      backgroundColor: 'blue'
     },
-    {
-      name: 'Litecoin',
-      value: 150
+    { 
+      coin: 'USDC', 
+      value: 150, 
+      percetage: '+5.12', 
+      backgroundColor: 'green'
     },
-    {
-      name: 'Ripple',
-      value: 1.5
+    { 
+      coin: 'Ripple', 
+      value: 1.5, 
+      percetage: '+0.12',
+      backgroundColor: 'red'
     }
   ]
 
