@@ -34,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, MarketsComponent, OptionAnalyticsComponent, InvestmentsComponent],
+  declarations: [DashboardComponent, MarketsComponent, OptionAnalyticsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
