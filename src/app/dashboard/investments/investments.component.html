@@ -1,6 +1,6 @@
 <div class="row mt-2">
 
-  <div class="col-xl-12 col-lg-12 col-md-12 mt-2 mb-2">
+  <div class="col-xl-12 col-lg-12 col-md-12 mt-3 mb-3">
     <div class="d-flex flex-row justify-content-start">
       @if (cryptoData$ | async; as cryptos_data) {
       @for (crypto of cryptos_data; track crypto.value) {
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-2 mt-2">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-2 mt-3 mb-3">
     <div class="row">
       @if (investmentData$ | async; as investment_data) {
         @for (investment of investment_data; track investment.value) {

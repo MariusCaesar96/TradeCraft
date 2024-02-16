@@ -30,7 +30,7 @@ export class InvestmentService {
 
   getInvestments$() {
     return this.investmentsMock$.pipe(
-      map(investments => { 
+      map(investments => {
         return investments.map(investment => {
           return {
             ...investment,
@@ -39,7 +39,7 @@ export class InvestmentService {
               series: [{
                 type: 'spline',
                 name: investment.name,
-                data: [...this.chartService.generateRandomData(4)],
+                data: [...this.chartService.generateRandomData(10)],
                 color: this.chartService.generateRandomColour()
               }]
             }

@@ -1,13 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { InvestmentCardComponent } from './investment-card/investment-card.component';
 import { CryptoService } from '../services/crypto.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { InvestmentService } from '../services/investment.service';
-
 
 @Component({
   selector: 'app-investments',
@@ -28,8 +26,5 @@ export class InvestmentsComponent implements OnInit {
     this.cryptoData$ = this.cryptoService.getCryptos$();
     this.investmentData$ = this.investmentService.getInvestments$();
   }
-
-
-
 
 }
