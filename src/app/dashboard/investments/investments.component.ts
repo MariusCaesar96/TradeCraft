@@ -1,47 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { InvestmentCardComponent } from './investment-card/investment-card.component';
+import { CryptoService } from '../services/crypto.service';
+import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-investments',
   templateUrl: './investments.component.html',
   standalone: true,
-  imports: [MatCardModule, HighchartsChartModule, InvestmentCardComponent],
-  styleUrl: './investments.component.scss'
+  imports: [MatCardModule, HighchartsChartModule, InvestmentCardComponent, CommonModule],
+  styleUrl: './investments.component.scss',
+  providers: [CryptoService]
 })
-export class InvestmentsComponent {
+export class InvestmentsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  cryptos_data: any = [];
+  cryptoData$!: Observable<any>;
 
-  // Move into its own service
-  cryptos_data = [
-    {
-      coin: 'Bitcoin',
-      value: 40000,
-      percetage: '+20.12',
-      backgroundColor: 'orange'
-    },
-    { 
-      coin: 'Ethereum', 
-      value: 3000, 
-      percetage: '+10.12', 
-      backgroundColor: 'blue'
-    },
-    { 
-      coin: 'USDC', 
-      value: 150, 
-      percetage: '+5.12', 
-      backgroundColor: 'green'
-    },
-    { 
-      coin: 'Ripple', 
-      value: 1.5, 
-      percetage: '+0.12',
-      backgroundColor: 'red'
-    }
-  ]
+  constructor(private cryptoService: CryptoService) { }
+
+  ngOnInit(): void {
+    this.cryptoData$ = this.cryptoService.getCryptos$();
+  }
 
   investments = [
     {
@@ -62,18 +46,6 @@ export class InvestmentsComponent {
     }
   ]
 
-  data = [1, 2, 3, 4];
-  Highcharts: typeof Highcharts = Highcharts;
-  updateFlag = false;
-
-  chartOptions: Highcharts.Options = {
-    series: [
-      {
-        type: 'line',
-        data: this.data,
-      },
-    ],
-  };
 
 
 }

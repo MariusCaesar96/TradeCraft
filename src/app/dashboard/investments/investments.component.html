@@ -1,14 +1,20 @@
 <div class="row mt-2">
+
+
   <div class="col">
     <div class="d-flex flex-row justify-content-start">
-      @for (crypto of cryptos_data; track crypto.value) {
-      <div class="crypto-ticker">
-        <div class="icon" [style.background]="crypto.backgroundColor"></div>
-        <span>{{ crypto.coin }}</span>
-        <span class="positive">{{ crypto.percetage}}</span>
-      </div>
+      @if (cryptoData$ | async; as cryptos_data) {  
+        @for (crypto of cryptos_data; track crypto.value) {
+        <div class="crypto-ticker">
+          <div class="icon" [style.background]="crypto.backgroundColor"></div>
+          <span>{{ crypto.coin }}</span>
+          <span class="positive">{{ crypto.percetage}}</span>
+        </div>
+        }
       }
     </div>
+
+    
   </div>
 
 
