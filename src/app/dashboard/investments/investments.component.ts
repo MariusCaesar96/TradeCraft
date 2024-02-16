@@ -6,6 +6,7 @@ import { InvestmentCardComponent } from './investment-card/investment-card.compo
 import { CryptoService } from '../services/crypto.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
+import { InvestmentService } from '../services/investment.service';
 
 
 @Component({
@@ -14,37 +15,20 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [MatCardModule, HighchartsChartModule, InvestmentCardComponent, CommonModule],
   styleUrl: './investments.component.scss',
-  providers: [CryptoService]
+  providers: [CryptoService, InvestmentService]
 })
 export class InvestmentsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  cryptos_data: any = [];
+  // NOTE: Make types of these variables
   cryptoData$!: Observable<any>;
+  investmentData$!: Observable<any>;
 
-  constructor(private cryptoService: CryptoService) { }
+  constructor(private cryptoService: CryptoService, private investmentService: InvestmentService) { }
 
   ngOnInit(): void {
     this.cryptoData$ = this.cryptoService.getCryptos$();
+    this.investmentData$ = this.investmentService.getInvestments$();
   }
 
-  investments = [
-    {
-      name: 'Portfolio value ',
-      value: 100400.36
-    },
-    {
-      name: 'Invested Capital',
-      value: 23869.5
-    },
-    {
-      name: 'Unrealized P/L',
-      value: 400.36
-    },
-    {
-      name: 'Return on Investment',
-      value: 27882
-    }
-  ]
 
 
 
