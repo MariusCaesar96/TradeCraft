@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { map, of, tap } from 'rxjs';
+import { ChartService } from './chart.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class InvestmentService {
 
   private investmentsMock$ = of([
     {
-      name: 'Portfolio value ',
+      name: 'Portfolio value',
       value: 100400.36
     },
     {
@@ -16,7 +17,7 @@ export class InvestmentService {
       value: 23869.5
     },
     {
-      name: 'Unrealized P/L',
+      name: 'Options Return',
       value: 400.36
     },
     {
@@ -25,9 +26,26 @@ export class InvestmentService {
     }
   ])
 
-  constructor() { }
+  constructor(private chartService: ChartService) { }
 
   getInvestments$() {
-    return this.investmentsMock$;
+    return this.investmentsMock$.pipe(
+      map(investments => { 
+        return investments.map(investment => {
+          return {
+            ...investment,
+            chartOptions: {
+              ...this.chartService.defaultChartOptions,
+              series: [{
+                type: 'spline',
+                name: investment.name,
+                data: [...this.chartService.generateRandomData(4)],
+                color: this.chartService.generateRandomColour()
+              }]
+            }
+          }
+        })
+      }),
+    );
   }
 }

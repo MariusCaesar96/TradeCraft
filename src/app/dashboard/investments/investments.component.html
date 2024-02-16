@@ -1,22 +1,29 @@
 <div class="row mt-2">
 
-
-  <div class="col">
+  <div class="col-xl-12 col-lg-12 col-md-12 mt-2 mb-2">
     <div class="d-flex flex-row justify-content-start">
-      @if (cryptoData$ | async; as cryptos_data) {  
-        @for (crypto of cryptos_data; track crypto.value) {
-        <div class="crypto-ticker">
-          <div class="icon" [style.background]="crypto.backgroundColor"></div>
-          <span>{{ crypto.coin }}</span>
-          <span class="positive">{{ crypto.percetage}}</span>
+      @if (cryptoData$ | async; as cryptos_data) {
+      @for (crypto of cryptos_data; track crypto.value) {
+      <div class="crypto-ticker">
+        <div class="icon" [style.background]="crypto.backgroundColor"></div>
+        <span>{{ crypto.coin }}</span>
+        <span class="positive">{{ crypto.percetage}}</span>
+      </div>
+      }
+      }
+    </div>
+  </div>
+
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-2 mt-2">
+    <div class="row">
+      @if (investmentData$ | async; as investment_data) {
+        @for (investment of investment_data; track investment.value) {
+        <div class="col-xl-3">
+          <app-investment-card [investment]="investment"></app-investment-card>
         </div>
         }
       }
     </div>
   </div>
-
-
-  <app-investment-card></app-investment-card>
-
 
 </div>

@@ -1,14 +1,15 @@
 <div class="card-container">
-    @for (chartOpt of chartOptionsArray; track chartOpt.title) {
+    @if (investment) {
     <mat-card class="dashboard-card">
         <mat-card-header>
-            <mat-card-title>{{ chartOpt.series && chartOpt.series.length > 0 ? chartOpt.series[0].name : '' }}</mat-card-title>
+            <mat-card-title>
+                {{ investment.name }}
+            </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOpt"
-                style="width: 100%; height: 200px; display: block;"></highcharts-chart>
+            <highcharts-chart [Highcharts]="Highcharts" [options]="investment.chartOptions"></highcharts-chart>
             <div class="card-value">
-                £500,000
+                {{ investment.value | currency: 'USD': true }}
             </div>
         </mat-card-content>
     </mat-card>
