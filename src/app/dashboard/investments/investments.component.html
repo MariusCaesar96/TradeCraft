@@ -26,4 +26,12 @@
     </div>
   </div>
 
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
+    <div class="row">
+      @if (portfolioValue$ | async; as portfolioValue) {
+      <app-portfolio-value-card [portfolioValues]="portfolioValue"></app-portfolio-value-card>
+      }
+    </div>
+  </div>
+
 </div>

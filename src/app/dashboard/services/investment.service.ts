@@ -35,7 +35,7 @@ export class InvestmentService {
           return {
             ...investment,
             chartOptions: {
-              ...this.chartService.defaultChartOptions,
+              ...this.chartService.defaultInvestmentCardChartOptions,
               series: [{
                 type: 'spline',
                 name: investment.name,
@@ -47,5 +47,20 @@ export class InvestmentService {
         })
       }),
     );
+  }
+
+  getPortfolioValue$() { 
+    return of({
+      chartOptions: {
+        ...this.chartService.defaultPortfolioValueChartOptions,
+        series: [{
+          name: 'Portfolio Value',
+          // Generate mock data
+          data: this.chartService.generateMockData(),
+          pointStart: Date.UTC(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+          pointInterval: 3600 * 1000 // one hour
+        }]
+      }
+    })
   }
 }
