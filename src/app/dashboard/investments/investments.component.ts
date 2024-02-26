@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { InvestmentService } from '../services/investment.service';
 import { PortfolioValueCardComponent } from './portfolio-value-card/portfolio-value-card.component';
+import { InvestmentTableComponent } from './investment-table/investment-table.component';
 
 @Component({
   selector: 'app-investments',
@@ -15,9 +16,10 @@ import { PortfolioValueCardComponent } from './portfolio-value-card/portfolio-va
   imports: [
     MatCardModule, 
     HighchartsChartModule, 
-    InvestmentCardComponent, 
     CommonModule,
-    PortfolioValueCardComponent
+    InvestmentCardComponent, 
+    PortfolioValueCardComponent,
+    InvestmentTableComponent
   ],
   styleUrl: './investments.component.scss',
   providers: [CryptoService, InvestmentService]
