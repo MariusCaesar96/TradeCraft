@@ -29,6 +29,7 @@ export class InvestmentsComponent implements OnInit {
   cryptoData$!: Observable<any>;
   investmentData$!: Observable<any>;
   portfolioValue$!: Observable<any>;
+  investmentTableData$!: Observable<any>;
 
   constructor(private cryptoService: CryptoService, private investmentService: InvestmentService) { }
 
@@ -36,6 +37,7 @@ export class InvestmentsComponent implements OnInit {
     this.cryptoData$ = this.cryptoService.getCryptos$();
     this.investmentData$ = this.investmentService.getInvestments$();
     this.portfolioValue$ = this.investmentService.getPortfolioValue$();
+    this.investmentTableData$ = this.investmentService.investments$;
   }
 
 }

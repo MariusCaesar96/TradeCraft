@@ -17,11 +17,11 @@
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-2 mt-3 mb-3">
     <div class="row">
       @if (investmentData$ | async; as investment_data) {
-        @for (investment of investment_data; track investment.value) {
-        <div class="col-xl-3">
-          <app-investment-card [investment]="investment"></app-investment-card>
-        </div>
-        }
+      @for (investment of investment_data; track investment.value) {
+      <div class="col-xl-3">
+        <app-investment-card [investment]="investment"></app-investment-card>
+      </div>
+      }
       }
     </div>
   </div>
@@ -36,8 +36,9 @@
 
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
     <div class="row">
-      <app-investment-table></app-investment-table>
-     
+      @if (investmentTableData$ | async; as investmentTableData) {
+      <app-investment-table [investmentData]="investmentTableData"></app-investment-table>
+      }
     </div>
   </div>
 
