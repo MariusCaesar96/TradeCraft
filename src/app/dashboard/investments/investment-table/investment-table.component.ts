@@ -6,7 +6,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 @Component({
   selector: 'app-investment-table',
   standalone: true,
-  imports: [CommonModule, MatTableModule],
+  imports: [CommonModule],
   templateUrl: './investment-table.component.html',
   styleUrl: './investment-table.component.scss'
 })
