@@ -1,0 +1,29 @@
+.my-portfolio {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+.my-portfolio th,
+.my-portfolio td {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: left;
+}
+
+.my-portfolio th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+.my-portfolio tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.my-portfolio .crypto-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}

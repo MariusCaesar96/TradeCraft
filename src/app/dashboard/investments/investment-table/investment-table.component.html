@@ -1,16 +1,19 @@
+<table class="my-portfolio">
+    <thead>
+        <tr>
+            @for (header of columnHeaders; track header) {
+            <th>{{ header }}</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
 
-
-    {{ investments | json }}
-
-
-    <mat-table [dataSource]="investments">
-        <ng-container *ngFor="let header of displayedColumns" [matColumnDef]="header">
-            <th mat-header-cell *matHeaderCellDef>{{ header }}<th>
-            <td mat-cell *matCellDef="let investment">{{ investment[header] }}</td>
-        </ng-container>
-    
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let investment; columns: displayedColumns;"></mat-row>
-    </mat-table>
-
-
+        @for (investment of investments; track investment) {
+        <tr>
+            @for (header of columnHeaders; track header) {
+            <td>{{ investment[header] }}</td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

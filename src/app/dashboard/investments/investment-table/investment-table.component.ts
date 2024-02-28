@@ -11,14 +11,10 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
   styleUrl: './investment-table.component.scss'
 })
 export class InvestmentTableComponent implements OnInit {
-  displayedColumns: string[] = ['token', 'direction', 'instrument', 'price', 'change24h', 'invested', 'volume'];
-  
+  columnHeaders: string[] = ['token', 'direction', 'instrument', 'price', 'change24h', 'invested', 'volume'];
   @Input() investments: any = [];
-  dataSource!: MatTableDataSource<any>;
-
 
   ngOnInit(): void { 
     console.log({ investments: this.investments });
-    this.investments = new MatTableDataSource(this.investments);
   }
 }
