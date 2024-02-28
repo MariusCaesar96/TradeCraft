@@ -36,8 +36,9 @@
 
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
     <div class="row">
-      @if (investmentTableData$ | async; as investmentTableData) {
-      <app-investment-table [investmentData]="investmentTableData"></app-investment-table>
+      @if (investmentTableData$ | async; as investmentTableData) {    
+      <!-- <app-investment-table [investmentData]="investmentTableData"></app-investment-table> -->
+        <app-investment-table [investments]="investmentTableData" ></app-investment-table>
       }
     </div>
   </div>

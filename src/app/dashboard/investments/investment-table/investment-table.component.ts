@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-investment-table',
@@ -9,13 +10,15 @@ import { MatTableModule } from '@angular/material/table';
   templateUrl: './investment-table.component.html',
   styleUrl: './investment-table.component.scss'
 })
-export class InvestmentTableComponent {
-  @Input() investmentData!: any;
-
+export class InvestmentTableComponent implements OnInit {
   displayedColumns: string[] = ['token', 'direction', 'instrument', 'price', 'change24h', 'invested', 'volume'];
+  
+  @Input() investments: any = [];
+  dataSource!: MatTableDataSource<any>;
+
 
   ngOnInit(): void { 
-    console.log('InvestmentTableComponent: ', this.investmentData);
-
+    console.log({ investments: this.investments });
+    this.investments = new MatTableDataSource(this.investments);
   }
 }
