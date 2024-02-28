@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { InvestmentService } from '../services/investment.service';
 import { PortfolioValueCardComponent } from './portfolio-value-card/portfolio-value-card.component';
 import { InvestmentTableComponent } from './investment-table/investment-table.component';
+import { RecentTransactionsCardComponent } from './recent-transactions-card/recent-transactions-card.component';
 
 @Component({
   selector: 'app-investments',
@@ -19,7 +20,8 @@ import { InvestmentTableComponent } from './investment-table/investment-table.co
     CommonModule,
     InvestmentCardComponent, 
     PortfolioValueCardComponent,
-    InvestmentTableComponent
+    InvestmentTableComponent,
+    RecentTransactionsCardComponent
   ],
   styleUrl: './investments.component.scss',
   providers: [CryptoService, InvestmentService]

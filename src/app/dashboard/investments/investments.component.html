@@ -1,20 +1,20 @@
 <div class="row mt-2">
 
-  <div class="col-xl-12 col-lg-12 col-md-12 mt-3 mb-3">
-    <div class="d-flex flex-row justify-content-start">
-      @if (cryptoData$ | async; as cryptos_data) {
-      @for (crypto of cryptos_data; track crypto.value) {
-      <div class="crypto-ticker">
-        <div class="icon" [style.background]="crypto.backgroundColor"></div>
-        <span>{{ crypto.coin }}</span>
-        <span class="positive">{{ crypto.percetage}}</span>
+  <div class="col-xl-8 col-lg-8 col-md-8 mt-3 mb-3">
+    <div class="row mb-4">
+      <div class="d-flex flex-row justify-content-start">
+        @if (cryptoData$ | async; as cryptos_data) {
+        @for (crypto of cryptos_data; track crypto.value) {
+        <div class="crypto-ticker">
+          <div class="icon" [style.background]="crypto.backgroundColor"></div>
+          <span>{{ crypto.coin }}</span>
+          <span class="positive">{{ crypto.percetage}}</span>
+        </div>
+        }
+        }
       </div>
-      }
-      }
     </div>
-  </div>
 
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-2 mt-3 mb-3">
     <div class="row">
       @if (investmentData$ | async; as investment_data) {
       @for (investment of investment_data; track investment.value) {
@@ -24,17 +24,13 @@
       }
       }
     </div>
-  </div>
 
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
     <div class="row">
       @if (portfolioValue$ | async; as portfolioValue) {
       <app-portfolio-value-card [portfolioValues]="portfolioValue"></app-portfolio-value-card>
       }
     </div>
-  </div>
 
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
     <div class="row">
       @if (investmentTableData$ | async; as investmentTableData) {    
       <!-- <app-investment-table [investmentData]="investmentTableData"></app-investment-table> -->
@@ -43,5 +39,11 @@
     </div>
   </div>
 
+  <div class="col-xl-4 col-lg-4 col-md-4 mt-3 mb-3">
+    <div class="row">
+      <app-recent-transactions-card></app-recent-transactions-card>
+    </div>
+  </div>
+     
 
 </div>
