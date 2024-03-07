@@ -29,15 +29,17 @@ import { RecentTransactionsCardComponent } from './recent-transactions-card/rece
 export class InvestmentsComponent implements OnInit {
   // NOTE: Make types of these variables
   cryptoData$!: Observable<any>;
-  investmentData$!: Observable<any>;
+  investmentCharts$!: Observable<any>;
   portfolioValue$!: Observable<any>;
   investmentTableData$!: Observable<any>;
 
   constructor(private cryptoService: CryptoService, private investmentService: InvestmentService) { }
 
   ngOnInit(): void {
-    this.cryptoData$ = this.cryptoService.getCryptos$();
-    this.investmentData$ = this.investmentService.getInvestments$();
+    this.cryptoData$ = this.cryptoService.crypto$;
+    this.investmentCharts$ = this.investmentService.getInvestmentCharts$();
+
+
     this.portfolioValue$ = this.investmentService.getPortfolioValue$();
     this.investmentTableData$ = this.investmentService.investments$;
   }

@@ -16,24 +16,23 @@
     </div>
 
     <div class="row">
-      @if (investmentData$ | async; as investment_data) {
-      @for (investment of investment_data; track investment.value) {
-      <div class="col-xl-3">
-        <app-investment-card [investment]="investment"></app-investment-card>
-      </div>
-      }
+      @if (investmentCharts$ | async; as investment_data) {
+        @for (investment of investment_data; track investment.value) {
+          <div class="col-xl-3">
+            <app-investment-card [investment]="investment"></app-investment-card>
+          </div>
+        }
       }
     </div>
 
     <div class="row">
       @if (portfolioValue$ | async; as portfolioValue) {
-      <app-portfolio-value-card [portfolioValues]="portfolioValue"></app-portfolio-value-card>
+       <app-portfolio-value-card [portfolioValues]="portfolioValue"></app-portfolio-value-card>
       }
     </div>
 
     <div class="row">
       @if (investmentTableData$ | async; as investmentTableData) {    
-      <!-- <app-investment-table [investmentData]="investmentTableData"></app-investment-table> -->
         <app-investment-table [investments]="investmentTableData" ></app-investment-table>
       }
     </div>
