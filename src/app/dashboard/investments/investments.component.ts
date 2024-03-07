@@ -32,16 +32,16 @@ export class InvestmentsComponent implements OnInit {
   investmentCharts$!: Observable<any>;
   portfolioValue$!: Observable<any>;
   investmentTableData$!: Observable<any>;
+  investmentTransactions$!: Observable<any>;
 
   constructor(private cryptoService: CryptoService, private investmentService: InvestmentService) { }
 
   ngOnInit(): void {
     this.cryptoData$ = this.cryptoService.crypto$;
     this.investmentCharts$ = this.investmentService.getInvestmentCharts$();
-
-
     this.portfolioValue$ = this.investmentService.getPortfolioValue$();
     this.investmentTableData$ = this.investmentService.investments$;
+    this.investmentTransactions$ = this.investmentService.investmentTransactions$;
   }
 
 }

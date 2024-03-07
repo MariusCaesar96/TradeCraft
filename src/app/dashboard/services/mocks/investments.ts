@@ -92,3 +92,54 @@ export const mockInvestmentChartsData = [
         value: 27882
     }
 ]
+
+export const mockInvestmentTransactionsData = [
+    {
+        crypto: 'BTC',
+        direction: 'Buy Spot',
+        transactionAmount: '+1.32BTC',
+        time: '2021-01-01T12:00:00Z'
+    },
+    {
+        crypto: 'ETH',
+        direction: 'Sell Spot',
+        transactionAmount: '-2.00ETH',
+        time: '2021-01-02T12:00:00Z'
+    },
+    {
+        crypto: 'XRP',
+        direction: 'Buy Spot',
+        transactionAmount: '+1000XRP',
+        time: '2021-01-03T12:00:00Z'
+    },
+    {
+        crypto: 'LTC',
+        direction: 'Sell Spot',
+        transactionAmount: '-5.00LTC',
+        time: '2021-01-04T12:00:00Z'
+    },
+    {
+        crypto: 'ADA',
+        direction: 'Buy Spot',
+        transactionAmount: '+1000ADA',
+        time: '2021-01-05T12:00:00Z'
+    },
+    {
+        crypto: 'DOT',
+        direction: 'Sell Spot',
+        transactionAmount: '-100DOT',
+        time: '2021-01-06T12:00:00Z'
+    },
+    {
+        crypto: 'LINK',
+        direction: 'Buy Spot',
+        transactionAmount: '+100LINK',
+        time: '2021-01-07T12:00:00Z'
+    },
+    {
+        crypto: 'XLM',
+        direction: 'Sell Spot',
+        transactionAmount: '-1000XLM',
+        time: '2021-01-08T12:00:00Z'
+    }
+]

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, of } from 'rxjs';
 import { ChartService } from './chart.service';
 import { BehaviorSubject } from 'rxjs';
-import { mockInvestmentChartsData, mockInvestmentsTableData } from './mocks/investments';
+import { mockInvestmentChartsData, mockInvestmentTransactionsData, mockInvestmentsTableData } from './mocks/investments';
 
 export interface InvestmentTable {
   token: string;
@@ -25,10 +25,14 @@ export class InvestmentService {
   private investmentChartsSubject$ = new BehaviorSubject<any[]>([]);
   investmentCharts$ = this.investmentChartsSubject$.asObservable();
 
+  private investmentTransactionsSubject$ = new BehaviorSubject<any[]>([]);
+  investmentTransactions$ = this.investmentTransactionsSubject$.asObservable();
+
 
   constructor(private chartService: ChartService) {
     this.investmentsTableSubject$.next(this.generateMockInvestmentsTableData());
     this.investmentChartsSubject$.next(this.generateMockInvestmentsChartData());
+    this.investmentTransactionsSubject$.next(this.generateMockInvestmentTransactionsData());
    }
 
   generateMockInvestmentsTableData(): InvestmentTable[] {
@@ -60,6 +64,9 @@ export class InvestmentService {
     );
   }
 
+  generateMockInvestmentTransactionsData() {
+    return mockInvestmentTransactionsData;
+  }
 
 
   getPortfolioValue$() { 
