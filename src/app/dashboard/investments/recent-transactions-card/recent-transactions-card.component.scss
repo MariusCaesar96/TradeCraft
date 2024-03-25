@@ -14,7 +14,7 @@ $my-app-subtext-color: rgb(149, 29, 29); // Subtext color for things like 'Buy S
 
   .mat-card-header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     padding-bottom: 0;
 
     .mat-icon {
@@ -25,11 +25,13 @@ $my-app-subtext-color: rgb(149, 29, 29); // Subtext color for things like 'Buy S
 
     .mat-card-title {
       font-weight: bold;
+      margin-bottom:5px;
     }
 
     .mat-card-subtitle {
       color: $my-app-subtext-color;
       font-size: 0.85rem;
+      margin-bottom: 5px;
     }
   }
 
