@@ -26,7 +26,7 @@ export class InvestmentService {
   investmentCharts$ = this.investmentChartsSubject$.asObservable();
 
   private investmentTransactionsSubject$ = new BehaviorSubject<any[]>([]);
-  investmentTransactions$ = this.investmentTransactionsSubject$.asObservable();
+  recentInvestmentTransactions$ = this.investmentTransactionsSubject$.asObservable();
 
 
   constructor(private chartService: ChartService) {

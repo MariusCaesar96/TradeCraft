@@ -1,0 +1,59 @@
+// Define your color palette
+$my-app-crypto-green: green; // Define the green color for positive values
+$my-app-crypto-red: red; // Define the red color for negative values
+$my-app-card-bg: white; // Background color for the card
+$my-app-text-color: rgb(32, 26, 26); // General text color
+$my-app-subtext-color: rgb(149, 29, 29); // Subtext color for things like 'Buy Spot', 'Sell Put', etc.
+
+// Custom card styling
+.mat-card-crypto {
+  background: $my-app-card-bg;
+  color: $my-app-text-color;
+  margin: 10px;
+  padding: 12px;
+
+  .mat-card-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+
+    .mat-icon {
+      // Style your icons here
+      color: $my-app-subtext-color;
+      margin-right: 8px;
+    }
+
+    .mat-card-title {
+      font-weight: bold;
+    }
+
+    .mat-card-subtitle {
+      color: $my-app-subtext-color;
+      font-size: 0.85rem;
+    }
+  }
+
+  .mat-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+
+    .crypto-amount {
+      &.positive {
+        color: $my-app-crypto-green;
+      }
+      &.negative {
+        color: $my-app-crypto-red;
+      }
+    }
+  }
+
+  .mat-card-footer {
+    color: $my-app-subtext-color;
+    font-size: 0.75rem;
+    text-align: right;
+    border-top: 1px solid rgba(0, 0, 0, 0.12); // Or use your preferred color
+    padding-top: 8px;
+  }
+}

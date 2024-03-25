@@ -10,9 +10,29 @@
     </mat-card-header>
         <mat-card-content>
             <h3>Today</h3>
-            <p>
-                Recent transactions will go here
-            </p>
+            @for (recentTransaction of transactions; track recentTransaction) {
+            <mat-card class="mat-card-crypto">
+                <mat-card-header class="mat-card-header">
+                    <!-- Replace 'account_balance_wallet' with the icon you want -->
+                    <mat-icon class="mat-icon">account_balance_wallet</mat-icon>
+                    <mat-card-title class="mat-card-title">
+                        {{ recentTransaction.crypto }}
+                    </mat-card-title>
+                    <mat-card-subtitle class="mat-card-subtitle">
+                        {{ recentTransaction.direction }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="mat-card-content">
+                    <span class="crypto-amount"
+                        [ngClass]="{'positive': recentTransaction.transactionAmount[0] === '+', 'negative': recentTransaction.transactionAmount[0] === '-'}">
+                        {{ recentTransaction.transactionAmount }}
+                    </span>
+                </mat-card-content>
+                <mat-card-footer class="mat-card-footer">
+                    {{ recentTransaction.time | date:'shortTime' }}
+                </mat-card-footer>
+            </mat-card>
+            }
         </mat-card-content>
     </mat-card>
 </div>
